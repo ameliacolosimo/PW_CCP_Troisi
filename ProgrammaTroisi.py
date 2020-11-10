@@ -19,6 +19,7 @@ mycursor.execute("SHOW TABLES")
 for x in mycursor:
   print(x)
 
+
 mycursor = conn.cursor()
 sql = "INSERT INTO contatori( id_contatore, id_utente, quantità_totale) VALUES (%s, %s, %s)"
 
