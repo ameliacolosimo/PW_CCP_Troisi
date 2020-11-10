@@ -2,6 +2,7 @@ import os
 import pymysql
 import sqlite3 as spl
 import datetime
+import pymysql.cursors
 
 conn = pymysql.connect(host='localhost',
                            user='root',
@@ -16,8 +17,13 @@ def show_all():
     for item in items:
         print(item)
 
-conn.commit()
+def add_many(lista):
+    c.executemany("INSERT INTO bollette_emesse VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)", lista)
+    conn.commit()
 
+def add_many1(lista):
+    c.executemany("INSERT INTO utenti VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)", lista)
+    conn.commit()
 
 #ALIQUOTA_IVA = 0.22
 #COSTO_UNITARIO = 0.20
