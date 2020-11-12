@@ -19,3 +19,8 @@ lista = [("1", "Mario", "Rossi", "Via Nazionale", "Pizzo", "VV", "89812", "sogge
 c.executemany("INSERT INTO utenti VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (lista))
 
 conn.commit()
+
+
+#funziona per l'inserimento multiplo di record
+
+#per l'inserimento singolo usre c.execute()
